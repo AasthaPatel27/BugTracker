@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -12,8 +13,26 @@ namespace BugTrackingService
     public interface IUserManagementService
     {
         [OperationContract]
-        void DoWork();
+        string AddUserRecord(Person _person, UserRole _role);
+
+        [OperationContract]
+        DataSet GetAllUserRecordsByRole(UserRole _role);
+
+        [OperationContract]
+        DataSet GetUserRecordByPersonId(int _personId, UserRole _role);
+
+        [OperationContract]
+        DataSet GetUserRecord(int _id, UserRole _role);
+
+        [OperationContract]
+        string DeleteUserRecord(int _personId, UserRole _role);
+
+        [OperationContract]
+        string UpdateUserRecord(Person _person, UserRole _role );
     }
+
+    [DataContract]
+    public enum UserRole { Admin, Developer, Tester, Any }
 
     [DataContract]
     public class Person
