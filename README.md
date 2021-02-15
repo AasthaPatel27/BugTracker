@@ -1,1 +1,1 @@
-# SOC_Project1
+# Bug Tracking System - Service Oriented Architecture - WCF - .NET Framework
