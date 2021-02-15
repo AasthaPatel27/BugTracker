@@ -13,22 +13,22 @@ namespace BugTrackingService
     public interface IUserManagementService
     {
         [OperationContract]
-        string AddUserRecord(Person _person, UserRole _role);
+        string AddUserRecord(Person _person, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        DataSet GetAllUserRecordsByRole(UserRole _role);
+        DataSet GetAllUserRecordsByRole(UserRole _role = UserRole.Any);
 
         [OperationContract]
-        DataSet GetUserRecordByPersonId(int _personId, UserRole _role);
+        DataSet GetUserRecordByPersonId(int _personId, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        DataSet GetUserRecord(int _id, UserRole _role);
+        DataSet GetUserRecord(int _id, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        string DeleteUserRecord(int _personId, UserRole _role);
+        string DeleteUserRecord(int _personId, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        string UpdateUserRecord(Person _person, UserRole _role );
+        string UpdateUserRecord(Person _person, UserRole _role = UserRole.Any);
     }
 
     [DataContract]
