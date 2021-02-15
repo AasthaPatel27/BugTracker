@@ -13,7 +13,7 @@ namespace BugTrackingService
     public interface IUserManagementService
     {
         [OperationContract]
-        string AddUserRecord(Person _person, UserRole _role = UserRole.Any);
+        string AddUserRecord(Person _person);
 
         [OperationContract]
         DataSet GetAllUserRecordsByRole(UserRole _role = UserRole.Any);
@@ -22,13 +22,13 @@ namespace BugTrackingService
         DataSet GetUserRecordByPersonId(int _personId, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        DataSet GetUserRecord(int _id, UserRole _role = UserRole.Any);
+        DataSet GetUserRecord(int _id, UserRole _role);
 
         [OperationContract]
         string DeleteUserRecord(int _personId, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        string UpdateUserRecord(Person _person, UserRole _role = UserRole.Any);
+        string UpdateUserRecord(Person _person);
     }
 
     [DataContract]
@@ -43,6 +43,7 @@ namespace BugTrackingService
         string _contact = "";
         string _password = "";
         int _createdBy = 1;
+        UserRole _role = UserRole.Any;
 
         [DataMember]
         public int PersonId
@@ -84,6 +85,13 @@ namespace BugTrackingService
         {
             get { return _createdBy; }
             set { _createdBy = value; }
+        }
+
+        [DataMember]
+        public UserRole UserRole
+        {
+            get { return _role; }
+            set { _role = value; }
         }
     }
 
