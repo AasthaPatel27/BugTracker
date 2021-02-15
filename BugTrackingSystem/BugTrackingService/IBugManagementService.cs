@@ -59,6 +59,21 @@ namespace BugTrackingService
     }
 
     [DataContract]
+    public enum BugAlertStatus
+    {
+        [EnumMember]
+        New,
+        [EnumMember]
+        UnderResolution,
+        [EnumMember]
+        Abandoned,
+        [EnumMember]
+        Resolved,
+        [EnumMember]
+        None
+    }
+
+    [DataContract]
     public class BugCategory
     {
         int _categoryId = 0;
@@ -119,12 +134,12 @@ namespace BugTrackingService
         string _description = "";
         int _createdBy = 0;
         int _categoryId = 0;
-        string _status = "New";
-        string _resolutionDescription = "";
+        BugAlertStatus _status = BugAlertStatus.None;
+        string _resolutionDescription ="";
         string _reportPath = "";
         DateTime _createdOn = DateTime.Now;
-        DateTime _assignedOn = DateTime.MinValue;
-        DateTime _resolvedOn = DateTime.MinValue;
+        DateTime? _assignedOn = DateTime.MinValue;
+        DateTime? _resolvedOn = DateTime.MinValue;
 
         [DataMember]
         public int BugId
@@ -162,7 +177,7 @@ namespace BugTrackingService
         }
 
         [DataMember]
-        public string Status
+        public BugAlertStatus Status
         {
             get { return _status; }
             set { _status = value; }
@@ -190,14 +205,14 @@ namespace BugTrackingService
         }
 
         [DataMember]
-        public DateTime AssignedOn
+        public DateTime? AssignedOn
         {
             get { return _assignedOn; }
             set { _assignedOn = value; }
         }
 
         [DataMember]
-        public DateTime ResolvedOn
+        public DateTime? ResolvedOn
         {
             get { return _resolvedOn; }
             set { _resolvedOn = value; }
