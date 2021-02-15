@@ -32,7 +32,7 @@ namespace BugTrackingService
     }
 
     [DataContract]
-    public enum UserRole { Admin, Developer, Tester, Any }
+    public enum UserRole { [EnumMember] Admin, [EnumMember] Developer, [EnumMember] Tester, [EnumMember]  Any }
 
     [DataContract]
     public class Person
@@ -88,7 +88,7 @@ namespace BugTrackingService
         }
 
         [DataMember]
-        public UserRole UserRole
+        public UserRole Role
         {
             get { return _role; }
             set { _role = value; }

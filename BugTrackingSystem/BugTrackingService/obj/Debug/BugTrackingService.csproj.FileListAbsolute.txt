@@ -1,0 +1,15 @@
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\BugTrackingService.dll.config
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\BugTrackingService.dll
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\BugTrackingService.pdb
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Security.AccessControl.dll
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Security.Permissions.dll
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Security.Principal.Windows.dll
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Security.AccessControl.xml
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Security.Permissions.xml
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\bin\Debug\System.Security.Principal.Windows.xml
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\obj\Debug\BugTrackingService.csproj.CoreCompileInputs.cache
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\obj\Debug\BugTrackingService.csproj.CopyComplete
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\obj\Debug\BugTrackingService.dll
+D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingService\obj\Debug\BugTrackingService.pdb
