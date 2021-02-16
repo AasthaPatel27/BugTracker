@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackingServiceHost", "BugTrackingServiceHost\BugTrackingServiceHost.csproj", "{ECDE480C-C7F6-48DB-8ABC-95FF3133B546}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackingWebApplication", "BugTrackingWebApplication\BugTrackingWebApplication.csproj", "{3D17F372-4CD7-4D62-9E17-81929BF2F4DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3639379E-26FE-4B71-BF6D-9244EE68C7D5} = {3639379E-26FE-4B71-BF6D-9244EE68C7D5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
