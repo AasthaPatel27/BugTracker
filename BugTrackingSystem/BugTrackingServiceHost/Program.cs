@@ -15,16 +15,16 @@ namespace BugTrackingServiceHost
             try
             {
                 Type userManageSerType = typeof(UserManagementService);
-                Uri userManageSerTcpUri = new Uri("net.tcp://localhost:8010/UserManagementService");
-                Uri userManageSerHttpUri = new Uri("http://localhost:8000/UserManagementService");
-                ServiceHost userServiceHost = new ServiceHost(userManageSerType, userManageSerTcpUri, userManageSerHttpUri);
+                //Uri userManageSerTcpUri = new Uri("net.tcp://localhost:8000/UserManagementService");
+                Uri userManageSerHttpUri = new Uri("http://localhost:8010/UserManagementService");
+                ServiceHost userServiceHost = new ServiceHost(userManageSerType, userManageSerHttpUri);
                 userServiceHost.Open();
                 Console.WriteLine("User Management Service Hosted Successfully...........\n\n");
 
                 Type bugManageSerType = typeof(BugManagementService);
-                Uri bugManageSerTcpUri = new Uri("net.tcp://localhost:8010/BugManagementService");
-                Uri bugManageSerHttpUri = new Uri("http://localhost:8000/BugManagementService");
-                ServiceHost bugServiceHost = new ServiceHost(bugManageSerType, bugManageSerTcpUri, bugManageSerHttpUri);
+                //Uri bugManageSerTcpUri = new Uri("net.tcp://localhost:8000/BugManagementService");
+                Uri bugManageSerHttpUri = new Uri("http://localhost:8010/BugManagementService");
+                ServiceHost bugServiceHost = new ServiceHost(bugManageSerType, bugManageSerHttpUri);
                 bugServiceHost.Open();
                 Console.WriteLine("Bug Management Service Hosted Successfully...........\n\n");
 
