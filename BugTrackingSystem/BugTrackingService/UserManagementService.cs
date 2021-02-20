@@ -98,7 +98,34 @@ namespace BugTrackingService
 
         DataSet IUserManagementService.GetAllUserRecordsByRole(UserRole _role)
         {
-            throw new NotImplementedException();
+            DataSet ds = new DataSet();
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                if (_role == UserRole.Any)
+                {
+                    cmd.CommandText = "SELECT * FROM Person";
+                }
+                else
+                {
+                    cmd.CommandText = "SELECT * FROM Person WHERE Role = @role";
+                    cmd.Parameters.AddWithValue("@role", _role);
+                }
+
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                conn.Close();
+            }
+            catch (FaultException fex)
+            {
+                Console.WriteLine("Error occured while retreiving all users :=> " + fex.ToString());
+            }
+            return ds;
         }
 
         Person IUserManagementService.GetUserRecord(int _id, UserRole _role)
