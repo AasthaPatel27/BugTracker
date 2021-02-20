@@ -55,7 +55,7 @@
             <tr>
                 <td class="auto-style5">Comments :</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="comments" runat="server" Height="137px" Width="434px"></asp:TextBox>
+                    <asp:TextBox ID="comment" runat="server" Height="137px" Width="434px"></asp:TextBox>
                 </td>
             </tr>
             <tr>

@@ -18,12 +18,9 @@ namespace BugTrackingWebApplication
             string b_category = "";
             string b_description = "";
             string b_comments = "";
-       
-            bTitle.Text = b_title;
-            status.Text = b_status;
-            category.Text = b_category;
-            description.Text = b_description;
-            comment.Text = b_comments;
+            
+            
+            
             
         }
     }
