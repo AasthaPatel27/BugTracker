@@ -135,7 +135,38 @@ namespace BugTrackingService
 
         Person IUserManagementService.GetUserRecordByPersonId(int _personId, UserRole _role)
         {
-            throw new NotImplementedException();
+            Person _per = null;
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM Person WHERE Id = @id";
+                cmd.Parameters.AddWithValue("@id", _personId);
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    _per = new Person() { 
+                        PersonId = (int)rdr[0],
+                        Name = (string)rdr[1],
+                        Email = (string)rdr[2],
+                        Contact = (string)rdr[3],
+                        Password = (string)rdr[4],
+                        CreaedBy = (int)rdr[5],
+                        Role = (UserRole)rdr[6]
+                    };
+                }
+                conn.Close();
+
+            }
+            catch (FaultException fex)
+            {
+                Console.WriteLine("Error occured while retreiving user by person id :=> " + fex.ToString());
+            }
+            return _per;
         }
 
         Person IUserManagementService.Login(string _email, string _password)
