@@ -21,7 +21,6 @@ namespace BugTrackingService
                 var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
                 SqlConnection conn = new SqlConnection(connectionString);
 
-
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO Person (Name, Email, ContactNo, Password, CreatedBy, Role) Values (@name, @email, @cnt, @pwd, @create, @role)";
@@ -130,7 +129,39 @@ namespace BugTrackingService
 
         Person IUserManagementService.GetUserRecord(int _id, UserRole _role)
         {
-            throw new NotImplementedException();
+            Person _per = null;
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM Person WHERE Id = @id";
+                cmd.Parameters.AddWithValue("@id", _id);
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    _per = new Person()
+                    {
+                        PersonId = (int)rdr[0],
+                        Name = (string)rdr[1],
+                        Email = (string)rdr[2],
+                        Contact = (string)rdr[3],
+                        Password = (string)rdr[4],
+                        CreaedBy = (int)rdr[5],
+                        Role = (UserRole)rdr[6]
+                    };
+                }
+                conn.Close();
+
+            }
+            catch (FaultException fex)
+            {
+                Console.WriteLine("Error occured while retreiving user by id :=> " + fex.ToString());
+            }
+            return _per;
         }
 
         Person IUserManagementService.GetUserRecordByPersonId(int _personId, UserRole _role)
@@ -171,7 +202,53 @@ namespace BugTrackingService
 
         Person IUserManagementService.Login(string _email, string _password)
         {
-            throw new NotImplementedException();
+            Person _per = null;
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM Person WHERE Email = @email AND Password = @pwd";
+                cmd.Parameters.AddWithValue("@email", _email);
+                cmd.Parameters.AddWithValue("@pwd", _password);
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    _per = new Person()
+                    {
+                        PersonId = (int)rdr[0],
+                        Name = (string)rdr[1],
+                        Email = (string)rdr[2],
+                        Contact = (string)rdr[3],
+                        Password = (string)rdr[4],
+                        CreaedBy = (int)rdr[5],
+                        Role = (UserRole)rdr[6]
+                    };
+                }
+                else
+                {
+                    _per = new Person()
+                    {
+                        PersonId = -1, 
+                        Name = "",
+                        Email = "",
+                        Contact = "",
+                        Password = "",
+                        CreaedBy = -1,
+                        Role = UserRole.Any
+                    };
+                }
+                conn.Close();
+
+            }
+            catch (FaultException fex)
+            {
+                Console.WriteLine("Error occured while login :=> " + fex.ToString());
+            }
+            return _per;
         }
 
         string IUserManagementService.UpdateUserRecord(Person _person)
