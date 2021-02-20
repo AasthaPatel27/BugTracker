@@ -11,7 +11,7 @@ namespace BugTrackingWebApplication
 {
 
 
-    public partial class DeveloperHome
+    public partial class NewBugAlert
     {
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace BugTrackingWebApplication
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
+        protected global::System.Web.UI.WebControls.TextBox title;
 
         /// <summary>
         /// description control.
@@ -39,16 +39,7 @@ namespace BugTrackingWebApplication
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label description;
-
-        /// <summary>
-        /// status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label status;
+        protected global::System.Web.UI.WebControls.TextBox description;
 
         /// <summary>
         /// category control.
@@ -57,15 +48,15 @@ namespace BugTrackingWebApplication
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label category;
+        protected global::System.Web.UI.WebControls.DropDownList category;
 
         /// <summary>
-        /// comment control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comment;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

@@ -11,7 +11,7 @@ namespace BugTrackingWebApplication
 {
 
 
-    public partial class DeveloperHome
+    public partial class UnresolvedBugList
     {
 
         /// <summary>
@@ -24,48 +24,30 @@ namespace BugTrackingWebApplication
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// title control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// description control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label description;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// status control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label status;
-
-        /// <summary>
-        /// category control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label category;
-
-        /// <summary>
-        /// comment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comment;
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }
