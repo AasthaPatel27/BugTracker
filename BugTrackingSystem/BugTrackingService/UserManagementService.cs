@@ -80,12 +80,17 @@ namespace BugTrackingService
             throw new NotImplementedException();
         }
 
-        DataSet IUserManagementService.GetUserRecord(int _id, UserRole _role)
+        Person IUserManagementService.GetUserRecord(int _id, UserRole _role)
         {
             throw new NotImplementedException();
         }
 
-        DataSet IUserManagementService.GetUserRecordByPersonId(int _personId, UserRole _role)
+        Person IUserManagementService.GetUserRecordByPersonId(int _personId, UserRole _role)
+        {
+            throw new NotImplementedException();
+        }
+
+        Person IUserManagementService.Login(string _email, string _password)
         {
             throw new NotImplementedException();
         }
