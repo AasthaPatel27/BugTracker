@@ -70,19 +70,19 @@
             <tr>
                 <td class="auto-style3">Email :</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="email" runat="server" Width="323px"></asp:TextBox>
+                    <asp:TextBox ID="email" runat="server" Width="323px" TextMode="Email"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style7">Contact:</td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="contact" runat="server" Width="323px"></asp:TextBox>
+                    <asp:TextBox ID="contact" runat="server" Width="323px" TextMode="Number"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style9">Password:</td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="password" runat="server" Width="324px"></asp:TextBox>
+                    <asp:TextBox ID="password" runat="server" Width="324px" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2" style="text-align:center;">
-                    <asp:Button ID="Button1" runat="server" Text="Register" />
+                    <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click" />
                 </td>
                
             </tr>

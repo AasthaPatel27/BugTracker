@@ -11,3 +11,16 @@ D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem
 D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.dll.config
 D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csproj.CopyComplete
 D:\GITHUB_REPO\BugTrackingSystem\SOC_WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csprojAssemblyReference.cache
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\App_Data\BugTrackingDatabase.mdf
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\App_Data\BugTrackingDatabase_log.ldf
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingServiceHost.exe.config
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingServiceHost.exe
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingServiceHost.pdb
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.dll
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.pdb
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.dll.config
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csprojAssemblyReference.cache
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csproj.CoreCompileInputs.cache
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csproj.CopyComplete
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.exe
+C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.pdb

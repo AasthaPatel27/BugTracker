@@ -57,13 +57,13 @@
             <tr>
                 <td class="auto-style8">Email :</td>
                 <td class="auto-style9">
-                    <asp:TextBox ID="email" runat="server" Width="396px"></asp:TextBox>
+                    <asp:TextBox ID="email" runat="server" Width="396px" TextMode="Email"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style6">Password :</td>
                 <td class="auto-style7">
-                    <asp:TextBox ID="password" runat="server" Width="396px"></asp:TextBox>
+                    <asp:TextBox ID="password" runat="server" Width="396px" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
