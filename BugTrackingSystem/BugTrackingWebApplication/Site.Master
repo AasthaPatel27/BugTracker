@@ -38,7 +38,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <asp:Panel ID="navPanelAdmin" runat="server">
+        <asp:Panel ID="navPanelAdmin" runat="server" Visible="false">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -54,12 +54,13 @@
                             <li><a runat="server" href="~/">adminHome</a></li>
                             <li><a runat="server" href="~/About">adminAbout</a></li>
                             <li><a runat="server" href="~/Contact">adminContact</a></li>
+                            <li><a runat="server" href="~/Profile"><asp:Label ID="adminName" runat="server" Text="AdminName"></asp:Label></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </asp:Panel>
-        <asp:Panel ID="navPanelDev" runat="server">
+        <asp:Panel ID="navPanelDev" runat="server" Visible="false">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -75,12 +76,13 @@
                             <li><a runat="server" href="~/">devHome</a></li>
                             <li><a runat="server" href="~/About">devAbout</a></li>
                             <li><a runat="server" href="~/Contact">devContact</a></li>
+                            <li><a runat="server" href="~/Profile"><asp:Label ID="devName" runat="server" Text="DevName"></asp:Label></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </asp:Panel>
-        <asp:Panel ID="navPanelTester" runat="server">
+        <asp:Panel ID="navPanelTester" runat="server" Visible="false">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -96,6 +98,7 @@
                             <li><a runat="server" href="~/">testerHome</a></li>
                             <li><a runat="server" href="~/About">testerAbout</a></li>
                             <li><a runat="server" href="~/Contact">testerContact</a></li>
+                            <li><a runat="server" href="~/Profile"><asp:Label ID="testerName" runat="server" Text="TesterName"></asp:Label></a></li>
                         </ul>
                     </div>
                 </div>
