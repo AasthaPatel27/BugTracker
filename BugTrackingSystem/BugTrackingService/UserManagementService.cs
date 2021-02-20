@@ -72,7 +72,28 @@ namespace BugTrackingService
 
         string IUserManagementService.DeleteUserRecord(int _personId, UserRole _role)
         {
-            throw new NotImplementedException();
+            string result = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE Person WHERE Id = @id";
+                cmd.Parameters.AddWithValue("@id", _personId);
+
+                conn.Open();
+                cmd.ExecuteReader();
+                conn.Close();
+                result = "User deleted Successfully.";
+
+            }
+            catch (FaultException fex)
+            {
+                result = "Error occured while updating user :=> " + fex.ToString();
+            }
+            return result;
         }
 
         DataSet IUserManagementService.GetAllUserRecordsByRole(UserRole _role)
