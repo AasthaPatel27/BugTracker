@@ -91,7 +91,7 @@ namespace BugTrackingService
             }
             catch (FaultException fex)
             {
-                result = "Error occured while updating user :=> " + fex.ToString();
+                result = "Error occured while deleting user :=> " + fex.ToString();
             }
             return result;
         }
