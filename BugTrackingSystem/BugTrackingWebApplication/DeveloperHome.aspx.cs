@@ -16,7 +16,7 @@ namespace BugTrackingWebApplication
             string b_category = "";
             string b_description = "";
 
-            this.bTitle.Text = b_title;
+            this.title.Text = b_title;
             status.Text = b_status;
             category.Text = b_category;
             description.Text = b_description;
@@ -25,7 +25,7 @@ namespace BugTrackingWebApplication
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            display.Text = comments.Text + " successfully done . ";
+            display.Text = comment.Text + " successfully done . ";
         }
     }
 }

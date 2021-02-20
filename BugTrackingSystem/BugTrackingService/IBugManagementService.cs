@@ -25,7 +25,7 @@ namespace BugTrackingService
         BugAlert GetBugAlertRecord(int bugId);
 
         [OperationContract]
-        DataSet GetAllBugAlertRecords(BugAlertFilter filter);
+        DataSet GetAllBugAlertRecords(BugAlertFilter filter,int personId);
 
         [OperationContract]
         string UpdateBugAlert(BugAlert bugAlert);
@@ -40,7 +40,7 @@ namespace BugTrackingService
         string RetreatBugAlertResolution(int bugId, int developerId);
 
         [OperationContract]
-        string ResolveBugAlert(BugAlert bugAlert);
+        string ResolveBugAlert(int bugAlertId, string bugAlertResolutionDescription);
     }
 
     [DataContract]

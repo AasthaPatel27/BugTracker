@@ -7,19 +7,27 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 47%;
-            height: 339px;
-            margin-left: 398px;
-            margin-top: 47px;
+            width: 44%;
+            margin-left: 362px;
+            margin-top: 158px;
+            height: 248px;
         }
         .auto-style2 {
-            width: 1677px;
+            width: 196px;
         }
         .auto-style3 {
-            width: 1665px;
+            width: 196px;
+            height: 26px;
+        }
+        .auto-style4 {
+            height: 26px;
         }
         .auto-style5 {
-            width: 755px;
+            width: 196px;
+            height: 49px;
+        }
+        .auto-style6 {
+            height: 49px;
         }
     </style>
 </head>
@@ -29,39 +37,34 @@
         </div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style5">Bug Title :</td>
-                <td class="auto-style3" id="title">
-                    <asp:Label ID="bTitle" runat="server" Text="Label"></asp:Label>
+                <td class="auto-style2">Bug Title :</td>
+                <td>
+                    <asp:Label ID="title" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style5">Bug Description :</td>
-                <td class="auto-style3" id="description">
+                <td class="auto-style2">Bug Description :</td>
+                <td>
                     <asp:Label ID="description" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style5">Bug Category :</td>
-                <td class="auto-style3" id="category">
-                    <asp:Label ID="category" runat="server" Text="Label"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5">Bug Status :</td>
-                <td class="auto-style3" id="status">
+                <td class="auto-style2">Bug Status :</td>
+                <td>
                     <asp:Label ID="status" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style5">Comments :</td>
-                <td class="auto-style3" id="comment">
-                    <asp:Label ID="comment" runat="server" Text="Label"></asp:Label>
+                <td class="auto-style5">Bug Category :</td>
+                <td class="auto-style6">
+                    <asp:Label ID="category" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
-                    &nbsp;</td>
-              
+                <td class="auto-style3">Comments :</td>
+                <td class="auto-style4">
+                    <asp:Label ID="comment" runat="server" Text="Label"></asp:Label>
+                </td>
             </tr>
         </table>
         

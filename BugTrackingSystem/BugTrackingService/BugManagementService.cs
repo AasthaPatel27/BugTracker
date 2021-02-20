@@ -13,9 +13,9 @@ namespace BugTrackingService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "BugManagementService" in both code and config file together.
     public class BugManagementService : IBugManagementService
     {
-        public void DoWork()
+        void IBugManagementService.DoWork()
         {
-
+            return;
         }
 
         string IBugManagementService.AddBugAlertRecord(BugAlert bugAlert)
@@ -51,22 +51,134 @@ namespace BugTrackingService
 
         string IBugManagementService.ClaimBugAlertResolution(int bugId, int developerId, int assignedBy)
         {
-            throw new NotImplementedException();
+            string result = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "INSERT INTO BugAlertAssignmentTable(BugAlertId,DeveloperId,AssignedBy) Values (@bugAlertId, @developerId, @assignedBy)";
+                sqlCmd.Parameters.AddWithValue("@bugAlertId", bugId);
+                sqlCmd.Parameters.AddWithValue("@developerId", developerId);
+                sqlCmd.Parameters.AddWithValue("@assignedBy", assignedBy);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                result = "Bug Alert Assignment Record added Successfully.";
+
+            }
+            catch (FaultException fex)
+            {
+                result = "Error occured while creating Bug Alert Assignment Record :=> " + fex.ToString();
+            }
+            return result;
+        }
+
+        string IBugManagementService.RetreatBugAlertResolution(int bugId, int developerId)
+        {
+            string msg = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "DELETE from BugAlertAssignmentTable where BugAlertId=@bugAlertId and DeveloperId=@developerId";
+                sqlCmd.Parameters.AddWithValue("@bugAlertId", bugId);
+                sqlCmd.Parameters.AddWithValue("@developerId", developerId);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                msg = "Bug Alert Assignment Record Deleted Successfully.";
+            }
+            catch (FaultException fex)
+            {
+                msg = "Error occured while deleting Bug Alert Assignment Record :=> " + fex.ToString();
+            }
+            return msg;
         }
 
         string IBugManagementService.DeleteBugAlertRecord(int bugAlertId)
         {
-            throw new NotImplementedException();
+            string msg = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "DELETE from BugAlert where Id=@id";
+                sqlCmd.Parameters.AddWithValue("@id", bugAlertId);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                msg = "Bug Alert Record Deleted Successfully.";
+            }
+            catch (FaultException fex)
+            {
+                msg = "Error occured while deleting Bug Alert Record :=> " + fex.ToString();
+            }
+            return msg;
         }
 
-        void IBugManagementService.DoWork()
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        DataSet IBugManagementService.GetAllBugAlertRecords(BugAlertFilter filter)
+        DataSet IBugManagementService.GetAllBugAlertRecords(BugAlertFilter filter,int personId)
         {
-            throw new NotImplementedException();
+            DataSet bugCategories = new DataSet();
+            var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn;
+            var cmdText = "";
+            if (filter == BugAlertFilter.All)
+            {
+                 cmdText= "SELECT * from BugAlert";
+                sqlCmd.CommandText = cmdText;
+            }
+            else if(filter == BugAlertFilter.AllByTester)
+            {
+                cmdText = "SELECT * from BugAlert where CreatedBy=@createdBy";
+                sqlCmd.CommandText = cmdText;
+                sqlCmd.Parameters.AddWithValue("@createdBy", personId);
+            }
+            else if (filter == BugAlertFilter.AllByDeveloper)
+            {
+                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId";
+                sqlCmd.CommandText = cmdText;
+                sqlCmd.Parameters.AddWithValue("@developerId", personId);
+            }
+            else if (filter == BugAlertFilter.UnresolvedByDeveloper)
+            {
+                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId and BA.status!=@status";
+                sqlCmd.CommandText = cmdText;
+                sqlCmd.Parameters.AddWithValue("@developerId", personId);
+                sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
+            }
+            else if (filter == BugAlertFilter.UnresolvedByTester)
+            {
+                cmdText = "SELECT * from BugAlert where CreatedBy=@createdBy and Status!=@status";
+                sqlCmd.CommandText = cmdText;
+                sqlCmd.Parameters.AddWithValue("@createdBy", personId);
+                sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
+            }
+
+
+            try
+            {
+                conn.Open();
+                SqlDataAdapter categorySqlDataAdapter = new SqlDataAdapter(sqlCmd);
+                categorySqlDataAdapter.Fill(bugCategories);
+                bugCategories.Tables[0].TableName = "BugAlert";
+                conn.Close();
+            }
+            catch (FaultException fex)
+            {
+                Console.WriteLine("Error occured while retriving Bug Alert Record :=> " + fex.ToString());
+            }
+            return bugCategories;
         }
 
         BugAlert IBugManagementService.GetBugAlertRecord(int bugId)
@@ -110,22 +222,85 @@ namespace BugTrackingService
 
         DataSet IBugManagementService.GetBugCategories()
         {
-            throw new NotImplementedException();
+            DataSet bugCategories = new DataSet();
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "SELECT * from BugCategory";
+                conn.Open();
+                SqlDataAdapter categorySqlDataAdapter = new SqlDataAdapter(sqlCmd);
+                categorySqlDataAdapter.Fill(bugCategories);
+                bugCategories.Tables[0].TableName = "BugCategory";
+                conn.Close();
+            }
+            catch (FaultException fex)
+            {
+                Console.WriteLine("Error occured while retriving Bug Category Record :=> " + fex.ToString());
+            }
+            return bugCategories;
         }
 
-        string IBugManagementService.ResolveBugAlert(BugAlert bugAlert)
+        string IBugManagementService.ResolveBugAlert(int bugAlertId,string bugAlertResolutionDescription)
         {
-            throw new NotImplementedException();
+            string result = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "UPDATE BugAlert SET ResolutionDescription=@resolutiondescription,status=@status where Id=@id";
+                sqlCmd.Parameters.AddWithValue("@resolutiondescription", bugAlertResolutionDescription);
+                sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
+                sqlCmd.Parameters.AddWithValue("@id", bugAlertId);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                result = "Bug Alert status set to Resolved Successfully.";
+
+            }
+            catch (FaultException fex)
+            {
+                result = "Error occured while Setting Bug Alert state as Resolved :=> " + fex.ToString();
+            }
+            return result;
         }
 
-        string IBugManagementService.RetreatBugAlertResolution(int bugId, int developerId)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         string IBugManagementService.UpdateBugAlert(BugAlert bugAlert)
         {
-            throw new NotImplementedException();
+            string result = "";
+            bugAlert.Status = BugAlertStatus.New;
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "UPDATE BugAlert SET Title=@title, Description=@description, CreatedBy=@createdBy, CategoryId=@categoryId, Status= @status,CreatedOn=@createdOn where Id=@id";
+                sqlCmd.Parameters.AddWithValue("@title", bugAlert.Title);
+                sqlCmd.Parameters.AddWithValue("@description", bugAlert.Description);
+                sqlCmd.Parameters.AddWithValue("@createdBy", bugAlert.CreatedBy);
+                sqlCmd.Parameters.AddWithValue("@categoryId", bugAlert.CategoryId);
+                sqlCmd.Parameters.AddWithValue("@status", bugAlert.Status);
+                sqlCmd.Parameters.AddWithValue("@createdOn", bugAlert.CreatedOn);
+                sqlCmd.Parameters.AddWithValue("@id", bugAlert.BugId);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                result = "Bug Alert Record Updated Successfully.";
+
+            }
+            catch (FaultException fex)
+            {
+                result = "Error occured while updating Bug Alert Record :=> " + fex.ToString();
+            }
+            return result;
         }
     }
+    
 }
