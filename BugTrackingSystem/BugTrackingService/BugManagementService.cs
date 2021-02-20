@@ -13,6 +13,11 @@ namespace BugTrackingService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "BugManagementService" in both code and config file together.
     public class BugManagementService : IBugManagementService
     {
+        void IBugManagementService.DoWork()
+        {
+            return;
+        }
+
         string IBugManagementService.AddBugAlertRecord(BugAlert bugAlert)
         {
             string result = "";
@@ -46,7 +51,53 @@ namespace BugTrackingService
 
         string IBugManagementService.ClaimBugAlertResolution(int bugId, int developerId, int assignedBy)
         {
-            throw new NotImplementedException();
+            string result = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "INSERT INTO BugAlertAssignmentTable(BugAlertId,DeveloperId,AssignedBy) Values (@bugAlertId, @developerId, @assignedBy)";
+                sqlCmd.Parameters.AddWithValue("@bugAlertId", bugId);
+                sqlCmd.Parameters.AddWithValue("@developerId", developerId);
+                sqlCmd.Parameters.AddWithValue("@assignedBy", assignedBy);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                result = "Bug Alert Assignment Record added Successfully.";
+
+            }
+            catch (FaultException fex)
+            {
+                result = "Error occured while creating Bug Alert Assignment Record :=> " + fex.ToString();
+            }
+            return result;
+        }
+
+        string IBugManagementService.RetreatBugAlertResolution(int bugId, int developerId)
+        {
+            string msg = "";
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn;
+                sqlCmd.CommandText = "DELETE from BugAlertAssignmentTable where BugAlertId=@bugAlertId and DeveloperId=@developerId";
+                sqlCmd.Parameters.AddWithValue("@bugAlertId", bugId);
+                sqlCmd.Parameters.AddWithValue("@developerId", developerId);
+                conn.Open();
+                sqlCmd.ExecuteNonQuery();
+                conn.Close();
+                msg = "Bug Alert Assignment Record Deleted Successfully.";
+            }
+            catch (FaultException fex)
+            {
+                msg = "Error occured while deleting Bug Alert Assignment Record :=> " + fex.ToString();
+            }
+            return msg;
         }
 
         string IBugManagementService.DeleteBugAlertRecord(int bugAlertId)
@@ -72,10 +123,7 @@ namespace BugTrackingService
             return msg;
         }
 
-        void IBugManagementService.DoWork()
-        {
-            return;
-        }
+        
 
         DataSet IBugManagementService.GetAllBugAlertRecords(BugAlertFilter filter,int personId)
         {
@@ -98,13 +146,13 @@ namespace BugTrackingService
             }
             else if (filter == BugAlertFilter.AllByDeveloper)
             {
-                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.CreatedBy,BA.status from BugAlert as BA,BugAlertAssignmentTable as AT where BA.Id = AT.BugAlertId and AT.Developer=@developerId";
+                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId";
                 sqlCmd.CommandText = cmdText;
                 sqlCmd.Parameters.AddWithValue("@developerId", personId);
             }
             else if (filter == BugAlertFilter.UnresolvedByDeveloper)
             {
-                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT where BA.Id = AT.BugAlertId and AT.Developer=@developerId and BA.status!=@status";
+                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId and BA.status!=@status";
                 sqlCmd.CommandText = cmdText;
                 sqlCmd.Parameters.AddWithValue("@developerId", personId);
                 sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
@@ -195,7 +243,7 @@ namespace BugTrackingService
             return bugCategories;
         }
 
-        string IBugManagementService.ResolveBugAlert(int bugAlertId,string bugAlertStatus,string bugAlertResolutionDescription)
+        string IBugManagementService.ResolveBugAlert(int bugAlertId,string bugAlertResolutionDescription)
         {
             string result = "";
             try
@@ -206,7 +254,7 @@ namespace BugTrackingService
                 sqlCmd.Connection = conn;
                 sqlCmd.CommandText = "UPDATE BugAlert SET ResolutionDescription=@resolutiondescription,status=@status where Id=@id";
                 sqlCmd.Parameters.AddWithValue("@resolutiondescription", bugAlertResolutionDescription);
-                sqlCmd.Parameters.AddWithValue("@status", bugAlertStatus);
+                sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
                 sqlCmd.Parameters.AddWithValue("@id", bugAlertId);
                 conn.Open();
                 sqlCmd.ExecuteNonQuery();
@@ -221,10 +269,7 @@ namespace BugTrackingService
             return result;
         }
 
-        string IBugManagementService.RetreatBugAlertResolution(int bugId, int developerId)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         string IBugManagementService.UpdateBugAlert(BugAlert bugAlert)
         {
@@ -257,5 +302,5 @@ namespace BugTrackingService
             return result;
         }
     }
-    }
+    
 }

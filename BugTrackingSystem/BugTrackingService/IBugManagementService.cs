@@ -40,7 +40,7 @@ namespace BugTrackingService
         string RetreatBugAlertResolution(int bugId, int developerId);
 
         [OperationContract]
-        string ResolveBugAlert(int bugAlertId, string bugAlertStatus, string bugAlertResolutionDescription);
+        string ResolveBugAlert(int bugAlertId, string bugAlertResolutionDescription);
     }
 
     [DataContract]
