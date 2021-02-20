@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BugManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BugTrackingService" />
+      <xsd:import />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBugManagementService_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_AddBugAlertRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBugAlertRecord" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_AddBugAlertRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBugAlertRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_GetBugCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBugCategories" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_GetBugCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBugCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_GetBugAlertRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBugAlertRecord" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_GetBugAlertRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBugAlertRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_GetAllBugAlertRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBugAlertRecords" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_GetAllBugAlertRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBugAlertRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_UpdateBugAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBugAlert" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_UpdateBugAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBugAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_DeleteBugAlertRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBugAlertRecord" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_DeleteBugAlertRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBugAlertRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_ClaimBugAlertResolution_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimBugAlertResolution" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_ClaimBugAlertResolution_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimBugAlertResolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_RetreatBugAlertResolution_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetreatBugAlertResolution" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_RetreatBugAlertResolution_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetreatBugAlertResolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_ResolveBugAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveBugAlert" />
+  </wsdl:message>
+  <wsdl:message name="IBugManagementService_ResolveBugAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveBugAlertResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBugManagementService">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/DoWork" message="tns:IBugManagementService_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/DoWorkResponse" message="tns:IBugManagementService_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBugAlertRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/AddBugAlertRecord" message="tns:IBugManagementService_AddBugAlertRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/AddBugAlertRecordResponse" message="tns:IBugManagementService_AddBugAlertRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBugCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/GetBugCategories" message="tns:IBugManagementService_GetBugCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/GetBugCategoriesResponse" message="tns:IBugManagementService_GetBugCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBugAlertRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/GetBugAlertRecord" message="tns:IBugManagementService_GetBugAlertRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/GetBugAlertRecordResponse" message="tns:IBugManagementService_GetBugAlertRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBugAlertRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/GetAllBugAlertRecords" message="tns:IBugManagementService_GetAllBugAlertRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/GetAllBugAlertRecordsResponse" message="tns:IBugManagementService_GetAllBugAlertRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBugAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/UpdateBugAlert" message="tns:IBugManagementService_UpdateBugAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/UpdateBugAlertResponse" message="tns:IBugManagementService_UpdateBugAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBugAlertRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/DeleteBugAlertRecord" message="tns:IBugManagementService_DeleteBugAlertRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/DeleteBugAlertRecordResponse" message="tns:IBugManagementService_DeleteBugAlertRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClaimBugAlertResolution">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/ClaimBugAlertResolution" message="tns:IBugManagementService_ClaimBugAlertResolution_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/ClaimBugAlertResolutionResponse" message="tns:IBugManagementService_ClaimBugAlertResolution_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetreatBugAlertResolution">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/RetreatBugAlertResolution" message="tns:IBugManagementService_RetreatBugAlertResolution_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/RetreatBugAlertResolutionResponse" message="tns:IBugManagementService_RetreatBugAlertResolution_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveBugAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBugManagementService/ResolveBugAlert" message="tns:IBugManagementService_ResolveBugAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBugManagementService/ResolveBugAlertResponse" message="tns:IBugManagementService_ResolveBugAlert_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBugManagementService" type="tns:IBugManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBugAlertRecord">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/AddBugAlertRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugCategories">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/GetBugCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugAlertRecord">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/GetBugAlertRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBugAlertRecords">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/GetAllBugAlertRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBugAlert">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/UpdateBugAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBugAlertRecord">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/DeleteBugAlertRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimBugAlertResolution">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/ClaimBugAlertResolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreatBugAlertResolution">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/RetreatBugAlertResolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveBugAlert">
+      <soap:operation soapAction="http://tempuri.org/IBugManagementService/ResolveBugAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BugManagementService">
+    <wsdl:port name="BasicHttpBinding_IBugManagementService" binding="tns:BasicHttpBinding_IBugManagementService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/BugTrackingService/BugManagementService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
