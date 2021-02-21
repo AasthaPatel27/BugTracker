@@ -21,15 +21,15 @@ namespace BugTrackingWebApplication
             }
             switch ((string)Session["p_role"]){
                 case ("admin"):
-                    adminName.Text = (string)Session["p_name"];
+                    adminName.Text = "Hello! " + (string)Session["p_name"];
                     navPanelAdmin.Visible = true;
                     break;
                 case ("tester"):
-                    testerName.Text = (string)Session["p_name"];
+                    testerName.Text = "Hello! " + (string)Session["p_name"];
                     navPanelTester.Visible = true;
                     break;
                 case ("dev"):
-                    devName.Text = (string)Session["p_name"];
+                    devName.Text = "Hello! " + (string)Session["p_name"];
                     navPanelDev.Visible = true;
                     break;
                 default:

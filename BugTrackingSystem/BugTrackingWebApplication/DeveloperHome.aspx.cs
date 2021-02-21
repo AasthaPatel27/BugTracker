@@ -25,7 +25,7 @@ namespace BugTrackingWebApplication
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //display.Text = comment.Text + " successfully done . ";
+            mydisplay.Text = comment.Text + " successfully done . ";
         }
     }
 }

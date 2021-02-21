@@ -19,16 +19,19 @@ namespace BugTrackingService
         DataSet GetAllUserRecordsByRole(UserRole _role = UserRole.Any);
 
         [OperationContract]
-        DataSet GetUserRecordByPersonId(int _personId, UserRole _role = UserRole.Any);
+        Person GetUserRecordByPersonId(int _personId, UserRole _role = UserRole.Any);
 
         [OperationContract]
-        DataSet GetUserRecord(int _id, UserRole _role);
+        Person GetUserRecord(int _id, UserRole _role);
 
         [OperationContract]
         string DeleteUserRecord(int _personId, UserRole _role = UserRole.Any);
 
         [OperationContract]
         string UpdateUserRecord(Person _person);
+
+        [OperationContract]
+        Person Login(string _email, string _password);
     }
 
     [DataContract]
