@@ -116,7 +116,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; Bug Tracking System by Rahil, Aastha and Deveng</p>
             </footer>
         </div>
 
