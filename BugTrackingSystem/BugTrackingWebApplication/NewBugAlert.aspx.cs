@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,12 +12,43 @@ namespace BugTrackingWebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            category.Items.Add(new ListItem("Select a item",""));
-            category.Items.Add(new ListItem("General", "General"));
-            category.Items.Add(new ListItem("UI bug", "UI bug"));
-            category.Items.Add(new ListItem("Server bug", "Server bug"));
+            DataSet categoriesDataSet ;
+            BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
+            categoriesDataSet = bugManagementServiceClient.GetBugCategories();
+            category.Items.Add(new ListItem("Select a item", ""));
+            foreach (DataRow dr in categoriesDataSet.Tables[0].Rows)
+            {
+                string catTitle = dr["Title"].ToString();
+                string Id = dr["Id"].ToString();
+                category.Items.Add(new ListItem(catTitle,Id));
+            }
             category.AppendDataBoundItems = true;
+        }
+        protected int getPersonId()
+        {
+            int pId = 0;
+            if (Session["personId"] != null)
+            {
+                pId = (int)Session["personId"];
+            }
+            else
+            {
+                pId = 5;
+            }
+            
+            return pId;
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
+            BTSBugManagementService.BugAlert bugAlert = new BTSBugManagementService.BugAlert();
+            bugAlert.Title = bugTitle.Text;
+            bugAlert.CategoryId = int.Parse(category.SelectedValue);
+            bugAlert.Description = description.Text;
+            bugAlert.CreatedBy = getPersonId();
+            displayLabel.Text = bugManagementServiceClient.AddBugAlertRecord(bugAlert);
+            //Response.Redirect("TesterHome.aspx");
         }
     }
 }

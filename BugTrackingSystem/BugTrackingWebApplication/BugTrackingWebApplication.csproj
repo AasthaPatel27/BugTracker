@@ -111,6 +111,7 @@
     <None Include="Connected Services\BTSBugManagementService\BugTrackingService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="BugDetail.aspx" />
     <Content Include="Connected Services\BTSBugManagementService\BugTrackingWebApplication.BTSBugManagementService.BugAlert.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -124,6 +125,9 @@
     <None Include="Connected Services\BTSBugManagementService\service2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Connected Services\UserManagementServiceReference\BugTrackingWebApplication.UserManagementServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserManagementServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserManagementServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserManagementServiceReference\Reference.svcmap">
@@ -143,7 +147,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="DetailView.aspx" />
     <Content Include="DeveloperHome.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -222,6 +225,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BugDetail.aspx.cs">
+      <DependentUpon>BugDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BugDetail.aspx.designer.cs">
+      <DependentUpon>BugDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\BTSBugManagementService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -245,13 +255,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DetailView.aspx.cs">
-      <DependentUpon>DetailView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DetailView.aspx.designer.cs">
-      <DependentUpon>DetailView.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeveloperHome.aspx.cs">
       <DependentUpon>DeveloperHome.aspx</DependentUpon>

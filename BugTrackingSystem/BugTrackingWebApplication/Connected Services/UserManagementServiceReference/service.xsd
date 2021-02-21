@@ -52,19 +52,7 @@
   <xs:element name="GetUserRecordByPersonIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetUserRecordByPersonIdResult" nillable="true">
-          <xs:complexType>
-            <xs:annotation>
-              <xs:appinfo>
-                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-              </xs:appinfo>
-            </xs:annotation>
-            <xs:sequence>
-              <xs:element ref="xs:schema" />
-              <xs:any />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="GetUserRecordByPersonIdResult" nillable="true" type="q4:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -72,26 +60,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="_id" type="xs:int" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="_role" type="q4:UserRole" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="_role" type="q5:UserRole" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetUserRecordResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetUserRecordResult" nillable="true">
-          <xs:complexType>
-            <xs:annotation>
-              <xs:appinfo>
-                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-              </xs:appinfo>
-            </xs:annotation>
-            <xs:sequence>
-              <xs:element ref="xs:schema" />
-              <xs:any />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="GetUserRecordResult" nillable="true" type="q6:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -99,7 +75,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="_personId" type="xs:int" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="_role" type="q5:UserRole" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="_role" type="q7:UserRole" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,7 +89,7 @@
   <xs:element name="UpdateUserRecord">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="_person" nillable="true" type="q6:Person" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="_person" nillable="true" type="q8:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -121,6 +97,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="UpdateUserRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BugTrackingService" minOccurs="0" name="LoginResult" nillable="true" type="q9:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
