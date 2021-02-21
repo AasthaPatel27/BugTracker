@@ -188,16 +188,16 @@ namespace BugTrackingWebApplication.UserManagementServiceReference {
         System.Threading.Tasks.Task<System.Data.DataSet> GetAllUserRecordsByRoleAsync(BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUserRecordByPersonId", ReplyAction="http://tempuri.org/IUserManagementService/GetUserRecordByPersonIdResponse")]
-        System.Data.DataSet GetUserRecordByPersonId(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
+        BugTrackingWebApplication.UserManagementServiceReference.Person GetUserRecordByPersonId(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUserRecordByPersonId", ReplyAction="http://tempuri.org/IUserManagementService/GetUserRecordByPersonIdResponse")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetUserRecordByPersonIdAsync(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
+        System.Threading.Tasks.Task<BugTrackingWebApplication.UserManagementServiceReference.Person> GetUserRecordByPersonIdAsync(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUserRecord", ReplyAction="http://tempuri.org/IUserManagementService/GetUserRecordResponse")]
-        System.Data.DataSet GetUserRecord(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
+        BugTrackingWebApplication.UserManagementServiceReference.Person GetUserRecord(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUserRecord", ReplyAction="http://tempuri.org/IUserManagementService/GetUserRecordResponse")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetUserRecordAsync(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
+        System.Threading.Tasks.Task<BugTrackingWebApplication.UserManagementServiceReference.Person> GetUserRecordAsync(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/DeleteUserRecord", ReplyAction="http://tempuri.org/IUserManagementService/DeleteUserRecordResponse")]
         string DeleteUserRecord(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role);
@@ -210,6 +210,12 @@ namespace BugTrackingWebApplication.UserManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/UpdateUserRecord", ReplyAction="http://tempuri.org/IUserManagementService/UpdateUserRecordResponse")]
         System.Threading.Tasks.Task<string> UpdateUserRecordAsync(BugTrackingWebApplication.UserManagementServiceReference.Person _person);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/Login", ReplyAction="http://tempuri.org/IUserManagementService/LoginResponse")]
+        BugTrackingWebApplication.UserManagementServiceReference.Person Login(string _email, string _password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/Login", ReplyAction="http://tempuri.org/IUserManagementService/LoginResponse")]
+        System.Threading.Tasks.Task<BugTrackingWebApplication.UserManagementServiceReference.Person> LoginAsync(string _email, string _password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -255,19 +261,19 @@ namespace BugTrackingWebApplication.UserManagementServiceReference {
             return base.Channel.GetAllUserRecordsByRoleAsync(_role);
         }
         
-        public System.Data.DataSet GetUserRecordByPersonId(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
+        public BugTrackingWebApplication.UserManagementServiceReference.Person GetUserRecordByPersonId(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
             return base.Channel.GetUserRecordByPersonId(_personId, _role);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetUserRecordByPersonIdAsync(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
+        public System.Threading.Tasks.Task<BugTrackingWebApplication.UserManagementServiceReference.Person> GetUserRecordByPersonIdAsync(int _personId, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
             return base.Channel.GetUserRecordByPersonIdAsync(_personId, _role);
         }
         
-        public System.Data.DataSet GetUserRecord(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
+        public BugTrackingWebApplication.UserManagementServiceReference.Person GetUserRecord(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
             return base.Channel.GetUserRecord(_id, _role);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetUserRecordAsync(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
+        public System.Threading.Tasks.Task<BugTrackingWebApplication.UserManagementServiceReference.Person> GetUserRecordAsync(int _id, BugTrackingWebApplication.UserManagementServiceReference.UserRole _role) {
             return base.Channel.GetUserRecordAsync(_id, _role);
         }
         
@@ -285,6 +291,14 @@ namespace BugTrackingWebApplication.UserManagementServiceReference {
         
         public System.Threading.Tasks.Task<string> UpdateUserRecordAsync(BugTrackingWebApplication.UserManagementServiceReference.Person _person) {
             return base.Channel.UpdateUserRecordAsync(_person);
+        }
+        
+        public BugTrackingWebApplication.UserManagementServiceReference.Person Login(string _email, string _password) {
+            return base.Channel.Login(_email, _password);
+        }
+        
+        public System.Threading.Tasks.Task<BugTrackingWebApplication.UserManagementServiceReference.Person> LoginAsync(string _email, string _password) {
+            return base.Channel.LoginAsync(_email, _password);
         }
     }
 }

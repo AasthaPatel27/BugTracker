@@ -44,6 +44,12 @@
   <wsdl:message name="IUserManagementService_UpdateUserRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateUserRecordResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserManagementService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUserManagementService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserManagementService">
     <wsdl:operation name="AddUserRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserManagementService/AddUserRecord" message="tns:IUserManagementService_AddUserRecord_InputMessage" />
@@ -68,6 +74,10 @@
     <wsdl:operation name="UpdateUserRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserManagementService/UpdateUserRecord" message="tns:IUserManagementService_UpdateUserRecord_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserManagementService/UpdateUserRecordResponse" message="tns:IUserManagementService_UpdateUserRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserManagementService/Login" message="tns:IUserManagementService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserManagementService/LoginResponse" message="tns:IUserManagementService_Login_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserManagementService" type="tns:IUserManagementService">
@@ -119,6 +129,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateUserRecord">
       <soap:operation soapAction="http://tempuri.org/IUserManagementService/UpdateUserRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUserManagementService/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
