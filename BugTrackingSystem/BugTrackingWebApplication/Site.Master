@@ -38,31 +38,85 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
+        <asp:Panel ID="navPanelAdmin" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="~/Registration">Bug Tracking System</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/Registration">Home</a></li>
+                            <li><a runat="server" href="~/Registration">Registration</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                            <li><a runat="server" href="~/Profile"><asp:Label ID="adminName" runat="server" Text="AdminName"></asp:Label></a></li>
+                            <li><a runat="server" href="~/LogOut">LogOut</a></li> 
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </asp:Panel>
+        <asp:Panel ID="navPanelDev" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="~/DeveloperHome">Bug Tracking System</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/DeveloperHome">Home</a></li>
+                            <li><a runat="server" href="~/UnresolvedBugList">View Unresolved Bugs</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                            <li><a runat="server" href="~/Profile"><asp:Label ID="devName" runat="server" Text="DevName"></asp:Label></a></li>
+                            <li><a runat="server" href="~/LogOut">LogOut</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="navPanelTester" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="~/TesterHome">Bug Tracking System</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/TesterHome">Home</a></li>
+                            <li><a runat="server" href="~/NewBugAlert">Create Bug Alert</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                            <li><a runat="server" href="~/Profile"><asp:Label ID="testerName" runat="server" Text="TesterName"></asp:Label></a></li>
+                            <li><a runat="server" href="~/LogOut">LogOut</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; Bug Tracking System by Rahil, Aastha and Deveng</p>
             </footer>
         </div>
 

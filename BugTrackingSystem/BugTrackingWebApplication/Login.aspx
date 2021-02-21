@@ -57,20 +57,25 @@
             <tr>
                 <td class="auto-style8">Email :</td>
                 <td class="auto-style9">
-                    <asp:TextBox ID="email" runat="server" Width="396px"></asp:TextBox>
+                    <asp:TextBox ID="email" runat="server" Width="396px" TextMode="Email"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style6">Password :</td>
                 <td class="auto-style7">
-                    <asp:TextBox ID="password" runat="server" Width="396px"></asp:TextBox>
+                    <asp:TextBox ID="password" runat="server" Width="396px" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">
-                    <asp:Button ID="Button1" runat="server" Text="Login"   />
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"   />
                 </td>
               
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="2">
+                    <asp:Label ID="errorLabel" runat="server" ForeColor="Red" />
+                </td>
             </tr>
         </table>
     </form>
