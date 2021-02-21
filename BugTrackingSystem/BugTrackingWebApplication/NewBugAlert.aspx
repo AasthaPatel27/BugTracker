@@ -29,7 +29,7 @@
             <tr>
                 <td class="auto-style4">Title :</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="title" runat="server" Width="281px"></asp:TextBox>
+                    <asp:TextBox ID="bugTitle" runat="server" Width="281px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -47,7 +47,13 @@
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2" style="text-align:center;">
-                    <asp:Button ID="Button1" runat="server" Text="Add" />
+                    <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="2" style="text-align:center;">
+                    <asp:Label ID="displayLabel" runat="server"></asp:Label>
                 </td>
                 
             </tr>

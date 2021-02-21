@@ -37,3 +37,16 @@ D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\Bug
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csproj.CopyComplete
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.exe
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.pdb
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\App_Data\BugTrackingDatabase.mdf
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\App_Data\BugTrackingDatabase_log.ldf
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingServiceHost.exe.config
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingServiceHost.exe
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingServiceHost.pdb
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.dll
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.pdb
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\bin\Debug\BugTrackingService.dll.config
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csprojAssemblyReference.cache
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csproj.CoreCompileInputs.cache
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.csproj.CopyComplete
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.exe
+F:\desktop_files_repo\prog\012_sem6\SOC\Project\BugTracker\BugTrackingSystem\BugTrackingServiceHost\obj\Debug\BugTrackingServiceHost.pdb

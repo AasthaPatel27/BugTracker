@@ -24,13 +24,22 @@ namespace BugTrackingWebApplication
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// title control.
+        /// bugTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
+        protected global::System.Web.UI.WebControls.Label bugTitle;
+
+        /// <summary>
+        /// BugIdLable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BugIdLable;
 
         /// <summary>
         /// description control.
@@ -60,13 +69,13 @@ namespace BugTrackingWebApplication
         protected global::System.Web.UI.WebControls.Label status;
 
         /// <summary>
-        /// comment control.
+        /// resolutionDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox comment;
+        protected global::System.Web.UI.WebControls.TextBox resolutionDescription;
 
         /// <summary>
         /// Button1 control.

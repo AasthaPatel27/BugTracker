@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 47%;
+            width: 59%;
             height: 339px;
             margin-left: 398px;
             margin-top: 47px;
@@ -21,41 +21,46 @@
         .auto-style5 {
             width: 3245px;
         }
+        .auto-style6 {
+            width: 1665px;
+            margin-left: 40px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-        </div>
+            You have below bug Alert to Resolve:</div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style5">Bug Title :</td>
-                <td class="auto-style3" id="title">
-                    <asp:Label ID="title" runat="server" Text="Label"></asp:Label>
-                </td>
+                <td class="auto-style5">Bug Title&nbsp; :</td>
+                <td class="auto-style6" id="title">
+                    <asp:Label ID="bugTitle" runat="server" Text="-"></asp:Label>
+                &nbsp;(<asp:Label ID="BugIdLable" runat="server" Text="-"></asp:Label>
+                    )</td>
             </tr>
             <tr>
                 <td class="auto-style5">Bug Description :</td>
                 <td class="auto-style3" id="description">
-                    <asp:Label ID="description" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="description" runat="server" Text="-"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Bug Category :</td>
                 <td class="auto-style3" id="category">
-                    <asp:Label ID="category" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="category" runat="server" Text="-"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Bug Status :</td>
                 <td class="auto-style3" id="status">
-                    <asp:Label ID="status" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="status" runat="server" Text="-"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Comments :</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="comment" runat="server" Height="137px" Width="434px"></asp:TextBox>
+                    <asp:TextBox ID="resolutionDescription" runat="server" Height="137px" Width="434px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -67,7 +72,7 @@
         </table>
         <p>
             &nbsp;</p>
-        <asp:Label ID="mydisplay" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="mydisplay" runat="server"></asp:Label>
     </form>
 </body>
 </html>

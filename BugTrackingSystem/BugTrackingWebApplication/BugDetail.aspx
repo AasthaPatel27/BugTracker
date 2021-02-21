@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeveloperHome.aspx.cs" Inherits="BugTrackingWebApplication.DeveloperHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BugDetail.aspx.cs" Inherits="BugTrackingWebApplication.BugDetail" %>
 
 <!DOCTYPE html>
 
@@ -39,7 +39,7 @@
             <tr>
                 <td class="auto-style2">Bug Title :</td>
                 <td>
-                    <asp:Label ID="title" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="bugTitle" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -61,13 +61,17 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">Comments :</td>
+                <td class="auto-style3">Bug Alert Description :</td>
                 <td class="auto-style4">
-                    <asp:Label ID="comment" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="resolutionDescription" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
+            <tr>
+                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style4">
+                    &nbsp;</td>
+            </tr>
         </table>
-        
     </form>
 </body>
 </html>

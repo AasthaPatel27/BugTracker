@@ -25,7 +25,10 @@
         </asp:GridView>
         <p>
             <asp:Button ID="Button1" runat="server" CssClass="auto-style2" OnClick="Button1_Click" Text="View" />
-            <asp:Button ID="Button2" runat="server" CssClass="auto-style3" Text="Claim" />
+            <asp:Button ID="Button2" runat="server" CssClass="auto-style3" Text="Claim" OnClick="Button2_Click" />
+        </p>
+        <p>
+            <asp:Label ID="DisplayLabel" runat="server"></asp:Label>
         </p>
     </form>
 </body>
