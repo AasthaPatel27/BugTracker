@@ -29,10 +29,12 @@
   <xs:simpleType name="BugAlertFilter">
     <xs:restriction base="xs:string">
       <xs:enumeration value="All" />
+      <xs:enumeration value="AllUnresolved" />
       <xs:enumeration value="AllByTester" />
       <xs:enumeration value="AllByDeveloper" />
       <xs:enumeration value="UnresolvedByTester" />
       <xs:enumeration value="UnresolvedByDeveloper" />
+      <xs:enumeration value="ResolvedByDeveloper" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="BugAlertFilter" nillable="true" type="tns:BugAlertFilter" />

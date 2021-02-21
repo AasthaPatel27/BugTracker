@@ -57,7 +57,6 @@ namespace BugTrackingService
             {
                 var connectionString = ConfigurationManager.ConnectionStrings["BugTrackingDatabase"].ConnectionString;
                 SqlConnection conn = new SqlConnection(connectionString);
-
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = conn;
                 sqlCmd.CommandText = "INSERT INTO BugAlertAssignmentTable(BugAlertId,DeveloperId,AssignedBy) Values (@bugAlertId, @developerId, @assignedBy)";
@@ -171,7 +170,14 @@ namespace BugTrackingService
             }
             else if (filter == BugAlertFilter.UnresolvedByDeveloper)
             {
-                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BC.Title as CategoryName,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT,BugCategory as BC where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId and BA.status!=@status and BA.CategoryId=BC.Id";
+                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.ResolutionDescription,BC.Title as CategoryName,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT,BugCategory as BC where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId and BA.status!=@status and BA.CategoryId=BC.Id";
+                sqlCmd.CommandText = cmdText;
+                sqlCmd.Parameters.AddWithValue("@developerId", personId);
+                sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
+            }
+            else if (filter == BugAlertFilter.ResolvedByDeveloper)
+            {
+                cmdText = "SELECT BA.Id,BA.Title,BA.Description,BA.ResolutionDescription,BC.Title as CategoryName,BA.CreatedBy,BA.Status from BugAlert as BA,BugAlertAssignmentTable as AT,BugCategory as BC where BA.Id = AT.BugAlertId and AT.DeveloperId=@developerId and BA.status=@status and BA.CategoryId=BC.Id";
                 sqlCmd.CommandText = cmdText;
                 sqlCmd.Parameters.AddWithValue("@developerId", personId);
                 sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
@@ -190,7 +196,6 @@ namespace BugTrackingService
                 sqlCmd.Parameters.AddWithValue("@status1", BugAlertStatus.Resolved);
                 sqlCmd.Parameters.AddWithValue("@status2", BugAlertStatus.UnderResolution);
             }
-
 
             try
             {
@@ -278,12 +283,20 @@ namespace BugTrackingService
                 SqlConnection conn = new SqlConnection(connectionString);
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = conn;
-                sqlCmd.CommandText = "UPDATE BugAlert SET ResolutionDescription=@resolutiondescription,status=@status where Id=@id";
+                sqlCmd.CommandText = "UPDATE BugAlert SET ResolutionDescription=@resolutiondescription,Status=@status where Id=@id";
                 sqlCmd.Parameters.AddWithValue("@resolutiondescription", bugAlertResolutionDescription);
                 sqlCmd.Parameters.AddWithValue("@status", BugAlertStatus.Resolved);
                 sqlCmd.Parameters.AddWithValue("@id", bugAlertId);
+
+                /*SqlCommand sqlCmd2 = new SqlCommand();
+                sqlCmd2.Connection = conn;
+                sqlCmd2.CommandText = "DELETE from BugAlertAssignmentTable where BugAlertId=@bugId";
+                sqlCmd2.Parameters.AddWithValue("@status", BugAlertStatus.Abandoned);
+                sqlCmd2.Parameters.AddWithValue("@bugId", bugAlertId);*/
+                
                 conn.Open();
                 sqlCmd.ExecuteNonQuery();
+                //sqlCmd2.ExecuteNonQuery();
                 conn.Close();
                 result = "Bug Alert status set to Resolved Successfully.";
 

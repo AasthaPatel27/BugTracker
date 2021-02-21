@@ -1,10 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BugDetail.aspx.cs" Inherits="BugTrackingWebApplication.BugDetail" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BugDetail.aspx.cs" Inherits="BugTrackingWebApplication.BugDetail" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style type="text/css">
         .auto-style1 {
             width: 44%;
@@ -30,17 +26,14 @@
             height: 49px;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">Bug Title :</td>
+                <td class="auto-style2">Bug Title : </td>
                 <td>
                     <asp:Label ID="bugTitle" runat="server" Text="Label"></asp:Label>
-                </td>
+                &nbsp;&nbsp;&nbsp;&nbsp; (Id:
+                    <asp:Label ID="bugId" runat="server" Text="Id"></asp:Label>
+                    )</td>
             </tr>
             <tr>
                 <td class="auto-style2">Bug Description :</td>
@@ -72,6 +65,4 @@
                     &nbsp;</td>
             </tr>
         </table>
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -246,16 +246,22 @@ namespace BugTrackingWebApplication.BTSBugManagementService {
         All = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllByTester = 1,
+        AllUnresolved = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllByDeveloper = 2,
+        AllByTester = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        UnresolvedByTester = 3,
+        AllByDeveloper = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        UnresolvedByDeveloper = 4,
+        UnresolvedByTester = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UnresolvedByDeveloper = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ResolvedByDeveloper = 6,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

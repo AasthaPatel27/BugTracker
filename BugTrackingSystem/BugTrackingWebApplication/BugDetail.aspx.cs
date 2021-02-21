@@ -16,6 +16,7 @@ namespace BugTrackingWebApplication
             {
                 BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
                 var bugAlert = bugManagementServiceClient.GetBugAlertRecord(bugID);
+                bugId.Text = bugID.ToString();
                 bugTitle.Text = bugAlert.Title;
                 description.Text = bugAlert.Description;
                 status.Text = bugAlert.Status.ToString();

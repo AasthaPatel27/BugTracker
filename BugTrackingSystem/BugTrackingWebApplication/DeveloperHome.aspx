@@ -1,15 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeveloperHome.aspx.cs" Inherits="BugTrackingWebApplication.DeveloperHome" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="DeveloperHome.aspx.cs" Inherits="BugTrackingWebApplication.DeveloperHome" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style type="text/css">
         .auto-style1 {
             width: 59%;
             height: 339px;
-            margin-left: 398px;
+            margin-left: 60px;
             margin-top: 47px;
         }
         .auto-style2 {
@@ -26,9 +22,6 @@
             margin-left: 40px;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
         <div>
             You have below bug Alert to Resolve:</div>
         <table class="auto-style1">
@@ -41,26 +34,27 @@
             </tr>
             <tr>
                 <td class="auto-style5">Bug Description :</td>
-                <td class="auto-style3" id="description">
+                <td class="auto-style3" id="descriptionTd">
                     <asp:Label ID="description" runat="server" Text="-"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Bug Category :</td>
-                <td class="auto-style3" id="category">
+                <td class="auto-style3" id="categoryTd">
                     <asp:Label ID="category" runat="server" Text="-"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Bug Status :</td>
-                <td class="auto-style3" id="status">
+                <td class="auto-style3" id="statusTd">
                     <asp:Label ID="status" runat="server" Text="-"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Comments :</td>
+                
                 <td class="auto-style3">
-                    <asp:TextBox ID="resolutionDescription" runat="server" Height="137px" Width="434px"></asp:TextBox>
+                    <asp:TextBox ID="resolutionDescription" runat="server" Text=""></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -73,6 +67,9 @@
         <p>
             &nbsp;</p>
         <asp:Label ID="mydisplay" runat="server"></asp:Label>
-    </form>
-</body>
-</html>
+    <br />
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </asp:Content>

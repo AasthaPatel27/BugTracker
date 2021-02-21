@@ -1,10 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewBugAlert.aspx.cs" Inherits="BugTrackingWebApplication.NewBugAlert" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NewBugAlert.aspx.cs" Inherits="BugTrackingWebApplication.NewBugAlert" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style type="text/css">
         .auto-style1 {
             width: 73%;
@@ -20,9 +16,6 @@
             width: 325px;
         }
     </style>
-</head>
-<body style="margin-left: 510px; margin-top: 186px; width: 617px;">
-    <form id="form1" runat="server">
         <div>
         </div>
         <table class="auto-style1">
@@ -58,6 +51,4 @@
                 
             </tr>
         </table>
-    </form>
-</body>
-</html>
+    </asp:Content>

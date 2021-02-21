@@ -13,29 +13,34 @@ namespace BugTrackingWebApplication
         int personId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            personId = 5;
-            BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
-            var unresolvedBugAlerts = bugManagementServiceClient.GetAllBugAlertRecords(BTSBugManagementService.BugAlertFilter.UnresolvedByTester, personId);
-            GridView1.DataSource = unresolvedBugAlerts;
-            GridView1.DataBind();
+            if (!IsPostBack)
+            {
+                personId = getPersonId();
+                BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
+                var unresolvedBugAlerts = bugManagementServiceClient.GetAllBugAlertRecords(BTSBugManagementService.BugAlertFilter.AllUnresolved, personId);
+                GridView1.DataSource = unresolvedBugAlerts;
+                GridView1.DataBind();
+                TableHeading.Text = "Unresolved Bug Alerts";
+            }
+            
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bugId = GridView1.SelectedRow.Cells[1].Text;
-            ViewState["bugId"] = bugId;
+            if (GridView1.SelectedRow!=null)
+            {
+                bugId = GridView1.SelectedRow.Cells[1].Text;
+                ViewState["bugId"] = bugId;
+            }
+            
         }
 
         protected int getPersonId()
         {
             int pId = 0;
-            if (Session["personId"] != null)
+            if (Session["p_id"] != null)
             {
-                pId = (int)Session["personId"];
-            }
-            else
-            {
-                pId = 5;
+                pId = (int)Session["p_id"];
             }
             return pId;
         }
@@ -61,11 +66,32 @@ namespace BugTrackingWebApplication
                 personId = getPersonId();
                 BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
                 DisplayLabel.Text = bugManagementServiceClient.ClaimBugAlertResolution(int.Parse(bugId), personId, personId);
+                Response.Redirect("DeveloperHome");
             }
             else
             {
-                DisplayLabel.Text = "Please select a bug to Delete";
+                DisplayLabel.Text = "Please select a bug to Claim";
             }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            personId = getPersonId();
+            BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
+            var unresolvedBugAlerts = bugManagementServiceClient.GetAllBugAlertRecords(BTSBugManagementService.BugAlertFilter.ResolvedByDeveloper, personId);
+            GridView1.DataSource = unresolvedBugAlerts;
+            GridView1.DataBind();
+            TableHeading.Text = "History of Resolved Bug Alerts";
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            personId = getPersonId();
+            BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
+            var unresolvedBugAlerts = bugManagementServiceClient.GetAllBugAlertRecords(BTSBugManagementService.BugAlertFilter.AllUnresolved, personId);
+            GridView1.DataSource = unresolvedBugAlerts;
+            GridView1.DataBind();
+            TableHeading.Text = "Unresolved Bug Alerts";
         }
     }
 }

@@ -26,13 +26,9 @@ namespace BugTrackingWebApplication
         protected int getPersonId()
         {
             int pId = 0;
-            if (Session["personId"] != null)
+            if (Session["p_id"] != null)
             {
-                pId = (int)Session["personId"];
-            }
-            else
-            {
-                pId = 5;
+                pId = (int)Session["p_id"];
             }
             return pId;
         }
@@ -64,7 +60,7 @@ namespace BugTrackingWebApplication
                 bugId = ViewState["bugId"].ToString();
                 BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
                 DisplayLabel.Text = bugManagementServiceClient.DeleteBugAlertRecord(int.Parse(bugId));
-                Response.Redirect("");
+                Response.Redirect("TesterHome");
             }
             else
             {

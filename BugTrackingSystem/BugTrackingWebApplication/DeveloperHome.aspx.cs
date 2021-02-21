@@ -16,9 +16,9 @@ namespace BugTrackingWebApplication
             personId = getPersonId();
             ViewState["personId"]=personId;
             BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
-            var unresolvedBugAlerts = bugManagementServiceClient.GetAllBugAlertRecords(BTSBugManagementService.BugAlertFilter.UnresolvedByTester, personId);
+            var unresolvedBugAlerts = bugManagementServiceClient.GetAllBugAlertRecords(BTSBugManagementService.BugAlertFilter.UnresolvedByDeveloper, personId);
 
-            if (unresolvedBugAlerts.Tables[0].Rows.Count>0)
+            if (unresolvedBugAlerts.Tables[0].Rows.Count>0 && !IsPostBack)
             {
                 var row = unresolvedBugAlerts.Tables[0].Rows[0];
                 BugIdLable.Text = row["Id"].ToString();
@@ -40,24 +40,26 @@ namespace BugTrackingWebApplication
         protected int getPersonId()
         {
             int pId = 0;
-            if (Session["personId"] != null)
+            if (Session["p_id"] != null)
             {
-                pId = (int)Session["personId"];
-            }
-            else
-            {
-                pId = 5;
+                pId = (int)Session["p_id"];
             }
             return pId;
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            mydisplay.Text = resolutionDescription.Text + " successfully done . ";
-            personId = (int)ViewState["personId"];
-            BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
-            bugAlertId = int.Parse(BugIdLable.Text);
-            bugManagementServiceClient.ResolveBugAlert(bugAlertId, resolutionDescription.Text);
-            Response.Redirect("DeveloperHome.aspx");
+            if (BugIdLable.Text!="-")
+            {
+                string rDescription = resolutionDescription.Text.ToString() ;
+                mydisplay.Text = rDescription.ToString()+ " successfully done . ";
+                personId = (int)ViewState["personId"];
+                bugAlertId = int.Parse(BugIdLable.Text);
+                BTSBugManagementService.BugManagementServiceClient bugManagementServiceClient = new BTSBugManagementService.BugManagementServiceClient();
+                
+                bugManagementServiceClient.ResolveBugAlert(bugAlertId, rDescription);
+                Response.Redirect("DeveloperHome.aspx");
+            }
+            
         }
     }
 }

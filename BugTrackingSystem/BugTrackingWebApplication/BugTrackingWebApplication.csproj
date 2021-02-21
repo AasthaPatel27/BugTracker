@@ -146,7 +146,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DetailView.aspx" />
     <Content Include="DeveloperHome.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -248,13 +247,6 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DetailView.aspx.cs">
-      <DependentUpon>DetailView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DetailView.aspx.designer.cs">
-      <DependentUpon>DetailView.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeveloperHome.aspx.cs">
       <DependentUpon>DeveloperHome.aspx</DependentUpon>

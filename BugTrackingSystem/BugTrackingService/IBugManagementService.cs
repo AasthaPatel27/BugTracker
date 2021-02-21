@@ -57,8 +57,10 @@ namespace BugTrackingService
         [EnumMember]
         UnresolvedByTester,
         [EnumMember]
-        UnresolvedByDeveloper
-        
+        UnresolvedByDeveloper,
+        [EnumMember]
+        ResolvedByDeveloper
+
     }
 
     [DataContract]
