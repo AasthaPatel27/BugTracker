@@ -55,6 +55,7 @@
                             <li><a runat="server" href="~/About">adminAbout</a></li>
                             <li><a runat="server" href="~/Contact">adminContact</a></li>
                             <li><a runat="server" href="~/Profile"><asp:Label ID="adminName" runat="server" Text="AdminName"></asp:Label></a></li>
+                            <li><a runat="server" href="~/LogOut">LogOut</a></li> 
                         </ul>
                     </div>
                 </div>
@@ -77,6 +78,7 @@
                             <li><a runat="server" href="~/About">devAbout</a></li>
                             <li><a runat="server" href="~/Contact">devContact</a></li>
                             <li><a runat="server" href="~/Profile"><asp:Label ID="devName" runat="server" Text="DevName"></asp:Label></a></li>
+                            <li><a runat="server" href="~/LogOut">LogOut</a></li>
                         </ul>
                     </div>
                 </div>
@@ -99,6 +101,7 @@
                             <li><a runat="server" href="~/About">testerAbout</a></li>
                             <li><a runat="server" href="~/Contact">testerContact</a></li>
                             <li><a runat="server" href="~/Profile"><asp:Label ID="testerName" runat="server" Text="TesterName"></asp:Label></a></li>
+                            <li><a runat="server" href="~/LogOut">LogOut</a></li>
                         </ul>
                     </div>
                 </div>
