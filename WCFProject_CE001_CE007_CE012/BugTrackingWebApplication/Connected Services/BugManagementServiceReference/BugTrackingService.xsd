@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BugTrackingService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BugTrackingService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BugAlert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BugId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResolutionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResolvedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" type="tns:BugAlertStatus" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BugAlert" nillable="true" type="tns:BugAlert" />
+  <xs:simpleType name="BugAlertStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New" />
+      <xs:enumeration value="UnderResolution" />
+      <xs:enumeration value="Abandoned" />
+      <xs:enumeration value="Resolved" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BugAlertStatus" nillable="true" type="tns:BugAlertStatus" />
+  <xs:simpleType name="BugAlertFilter">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="AllByTester" />
+      <xs:enumeration value="AllByDeveloper" />
+      <xs:enumeration value="UnresolvedByTester" />
+      <xs:enumeration value="UnresolvedByDeveloper" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BugAlertFilter" nillable="true" type="tns:BugAlertFilter" />
+</xs:schema>
