@@ -15,13 +15,22 @@ namespace BugTrackingWebApplication
     {
 
         /// <summary>
-        /// form1 control.
+        /// notAdminErrorLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label notAdminErrorLabel;
+
+        /// <summary>
+        /// regPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel regPanel;
 
         /// <summary>
         /// name control.
@@ -69,12 +78,48 @@ namespace BugTrackingWebApplication
         protected global::System.Web.UI.WebControls.DropDownList role;
 
         /// <summary>
-        /// Button1 control.
+        /// btnRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnRegister;
+
+        /// <summary>
+        /// errorLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorLabel;
+
+        /// <summary>
+        /// successLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label successLabel;
+
+        /// <summary>
+        /// btnNewReg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewReg;
+
+        /// <summary>
+        /// btnGoProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGoProfile;
     }
 }

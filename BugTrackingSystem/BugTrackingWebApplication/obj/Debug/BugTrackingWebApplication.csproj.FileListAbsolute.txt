@@ -145,7 +145,6 @@ C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackin
 C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.csproj.CopyComplete
 C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.dll
 C:\Users\AASTHA PATEL\Desktop\BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.pdb
-D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.csprojAssemblyReference.cache
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.csproj.CoreCompileInputs.cache
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.dll
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.pdb
@@ -219,3 +218,4 @@ D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\Bug
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.csproj.CopyComplete
+D:\GITHUB_REPO\BugTrackingSystem\WCF_BugTracker\BugTracker\BugTrackingSystem\BugTrackingWebApplication\obj\Debug\BugTrackingWebApplication.csprojAssemblyReference.cache

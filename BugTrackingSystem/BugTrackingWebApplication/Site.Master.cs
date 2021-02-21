@@ -11,13 +11,13 @@ namespace BugTrackingWebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["p_email"] = "dpTemp@dp.in";
+/*            Session["p_email"] = "dpTemp@dp.in";
             Session["p_id"] = 1;
             Session["p_name"] = "deTemp";
-            Session["p_role"] = "dev";
+            Session["p_role"] = "dev";*/
             if (Session["p_email"] == null)
             {
-                Response.Redirect("dpTemp.aspx");
+                Response.Redirect("~/Login");
             }
             switch ((string)Session["p_role"]){
                 case ("admin"):

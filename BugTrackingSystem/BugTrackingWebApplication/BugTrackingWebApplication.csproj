@@ -108,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Connected Services\UserManagementServiceReference\BugTrackingWebApplication.UserManagementServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserManagementServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserManagementServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserManagementServiceReference\Reference.svcmap">
