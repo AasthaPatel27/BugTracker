@@ -14,7 +14,7 @@ namespace BugTrackingWebApplication
             Session["p_email"] = "dpTemp@dp.in";
             Session["p_id"] = 1;
             Session["p_name"] = "deTemp";
-            Session["p_role"] = "dev";
+            Session["p_role"] = "tester";
             if (Session["p_email"] == null)
             {
                 Response.Redirect("dpTemp.aspx");

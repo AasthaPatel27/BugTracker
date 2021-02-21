@@ -108,9 +108,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <None Include="Connected Services\BTSBugManagementService\BugTrackingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\BTSBugManagementService\BugTrackingWebApplication.BTSBugManagementService.BugAlert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\BTSBugManagementService\service.wsdl" />
+    <None Include="Connected Services\BTSBugManagementService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BTSBugManagementService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BTSBugManagementService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\UserManagementServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserManagementServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserManagementServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\BTSBugManagementService\configuration91.svcinfo" />
+    <None Include="Connected Services\BTSBugManagementService\configuration.svcinfo" />
+    <None Include="Connected Services\BTSBugManagementService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -198,6 +220,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\BTSBugManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\UserManagementServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -310,6 +337,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BTSBugManagementService\" />
     <WCFMetadataStorage Include="Connected Services\UserManagementServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
