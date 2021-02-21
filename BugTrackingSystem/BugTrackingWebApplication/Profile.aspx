@@ -1,10 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="BugTrackingWebApplication.Profile" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style type="text/css">
+        <style type="text/css">
         .auto-style1 {
             width: 111%;
-            margin-left: 494px;
             margin-top: 175px;
             height: 235px;
             margin-bottom: 0px;
@@ -48,12 +47,14 @@
         <div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style11" style="text-align:center;" colspan="2"><strong><h2>Your Profile</h2></strong></td>
+                <td class="auto-style11" colspan="2"><strong><h2>Your Profile</h2></strong></td>
+                <br />
             </tr>
             <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
+                <td class="auto-style2" colspan="2">
                     <asp:Button ID="btnView" runat="server" Text="Click to View" OnClick="btnView_Click" />
                 </td>
+                <br />
             </tr>
             <tr>
                 <td class="auto-style2">ID :</td>
@@ -103,12 +104,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
+                <td class="auto-style2" colspan="2">
                     <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
                 </td>
             </tr>
              <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
+                <td class="auto-style2" colspan="2">
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
                 </td>
             </tr>

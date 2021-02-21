@@ -47,13 +47,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                        <a class="navbar-brand" runat="server" href="~/Registration">Bug Tracking System</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a runat="server" href="~/">adminHome</a></li>
-                            <li><a runat="server" href="~/About">adminAbout</a></li>
-                            <li><a runat="server" href="~/Contact">adminContact</a></li>
+                            <li><a runat="server" href="~/Registration">Home</a></li>
+                            <li><a runat="server" href="~/Registration">Registration</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
                             <li><a runat="server" href="~/Profile"><asp:Label ID="adminName" runat="server" Text="AdminName"></asp:Label></a></li>
                             <li><a runat="server" href="~/LogOut">LogOut</a></li> 
                         </ul>
@@ -70,13 +71,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                        <a class="navbar-brand" runat="server" href="~/DeveloperHome">Bug Tracking System</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a runat="server" href="~/">devHome</a></li>
-                            <li><a runat="server" href="~/About">devAbout</a></li>
-                            <li><a runat="server" href="~/Contact">devContact</a></li>
+                            <li><a runat="server" href="~/DeveloperHome">Home</a></li>
+                            <li><a runat="server" href="~/UnresolvedBugList">View Unresolved Bugs</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
                             <li><a runat="server" href="~/Profile"><asp:Label ID="devName" runat="server" Text="DevName"></asp:Label></a></li>
                             <li><a runat="server" href="~/LogOut">LogOut</a></li>
                         </ul>
@@ -93,13 +95,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                        <a class="navbar-brand" runat="server" href="~/TesterHome">Bug Tracking System</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a runat="server" href="~/">testerHome</a></li>
-                            <li><a runat="server" href="~/About">testerAbout</a></li>
-                            <li><a runat="server" href="~/Contact">testerContact</a></li>
+                            <li><a runat="server" href="~/TesterHome">Home</a></li>
+                            <li><a runat="server" href="~/NewBugAlert">Create Bug Alert</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
                             <li><a runat="server" href="~/Profile"><asp:Label ID="testerName" runat="server" Text="TesterName"></asp:Label></a></li>
                             <li><a runat="server" href="~/LogOut">LogOut</a></li>
                         </ul>

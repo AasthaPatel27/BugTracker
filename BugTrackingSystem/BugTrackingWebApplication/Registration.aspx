@@ -3,7 +3,6 @@
     <style type="text/css">
         .auto-style1 {
             width: 111%;
-            margin-left: 494px;
             margin-top: 175px;
             height: 235px;
             margin-bottom: 0px;
@@ -52,7 +51,7 @@
         <div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style11" style="text-align:center;" colspan="2"><strong><h2>Register</h2></strong></td>
+                <td class="auto-style11" colspan="2"><strong><h2>Register</h2></strong></td>
                 
             </tr>
             <tr>
@@ -90,7 +89,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
+                <td class="auto-style2" colspan="2">
                     <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
                 </td>
                
@@ -106,12 +105,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
+                <td class="auto-style2" colspan="2">
                     <asp:Button ID="btnNewReg" runat="server" Text="Register New Entry" Visible="false" OnClick="btnNewReg_Click" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" colspan="2" style="text-align:center;">
+                <td class="auto-style2" colspan="2">
                     <asp:Button ID="btnGoProfile" runat="server" Text="Go to Profile" OnClick="btnGoProfile_Click" />
                 </td>
             </tr>
